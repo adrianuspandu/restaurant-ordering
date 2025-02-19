@@ -1,6 +1,7 @@
 import {menuArray} from '/data.js'
 
 const cardDetailsForm = document.getElementById('card-details-form')
+const thankYouMessage = document.getElementById('thank-you-message')
 let amountOrdered = 0
 let totalPrice = 0
 
@@ -23,6 +24,7 @@ cardDetailsForm.addEventListener('submit', function(e) {
 
 
 function handleAddButton(menuId) {
+    thankYouMessage.style.display = 'none'
     const matchedItem = menuArray.filter(function(menu) {
         return menu.id == menuId
     })[0]
@@ -50,8 +52,10 @@ function handleCompleteOrderBtn() {
 function handlePayBtn() {
     const paymentModal = document.getElementById('payment-modal')
     const cardDetailsFormData = new FormData(cardDetailsForm)
-    const thankYouMessage = document.getElementById('thank-you-message')
     const fullName = cardDetailsFormData.get('cardName')
+    document.getElementById('card-name').value = ''
+    document.getElementById('card-number').value = ''
+    document.getElementById('card-cvv').value = ''
 
     paymentModal.style.display = 'none'
 
@@ -68,7 +72,7 @@ function renderMenu(array) {
         return `<div class="menu-item-container">
                 <p class="item-emoji">${menuItem.emoji}</p>
                 <div class="item-column">
-                    <h2 class="item-title">${menuItem.name}</h2>
+                    <h3 class="item-title">${menuItem.name}</h3>
                     <p class="item-ingredients">${menuItem.ingredients}</p>
                     <p class="item-price">$${menuItem.price}</p>
                 </div>
@@ -91,7 +95,7 @@ function renderSummary(array) {
                 return  `<div class="order-summary-item">
                             <h3>${menuItem.name}</h3>
                             <button class="removeBtn" data-remove="${menuItem.id}">remove</button>
-                            <p>$${menuItem.amount * menuItem.price}</p>
+                            <p class="order-summary-price">$${menuItem.amount * menuItem.price}</p>
                         </div>
                         `
             }

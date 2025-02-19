@@ -21,27 +21,49 @@
 
       <section id="order-summary" class="order-summary">
         <h2>Your order</h2>
-            <div id="order-summary-items-container">
-            <!--Order Summary Items go here-->
-            </div>
-        <button id="complete-order-btn" class="complete-order-btn">complete order</button>
+        <div id="order-summary-items-container" class="order-summary-items-container">
+          <!--Order Summary Items go here-->
+        </div>
+        <button id="complete-order-btn" class="complete-order-btn">
+          complete order
+        </button>
       </section>
 
       <div id="payment-modal" class="payment-modal">
-        <h2>Enter Card Details</h2>
+        <h2 class="modal-heading">Enter Card Details</h2>
         <form id="card-details-form" class="card-details-form">
-          <input type="text" name="cardName" placeholder="Enter your name" pattern="[A-Za-z\s]+" required/>
-          <input type="text" name="cardNumber" placeholder="Enter card number" pattern="[0-9]+" required/>
-          <input type="text" name="cardCVV" placeholder="Enter CVV" pattern="[0-9]{3}" required />
+          <input
+            type="text"
+            id="card-name"
+            name="cardName"
+            placeholder="Enter your name"
+            pattern="[A-Za-z\s]+"
+            required
+          />
+          <input
+            type="text"
+            id="card-number"
+            name="cardNumber"
+            placeholder="Enter card number"
+            pattern="[0-9]+"
+            required
+          />
+          <input
+            type="text"
+            id="card-cvv"
+            name="cardCVV"
+            placeholder="Enter CVV"
+            pattern="[0-9]{3}"
+            required
+          />
           <button id="pay-btn" type="submit" class="pay-btn">Pay</button>
         </form>
       </div>
-      
+
       <div id="thank-you-message" class="thank-you-message">
         <!--Thank you message comes here-->
       </div>
     </main>
-
 
     <script src="index.js" type="module"></script>
   </body>
