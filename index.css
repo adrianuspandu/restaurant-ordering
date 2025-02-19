@@ -1,3 +1,75 @@
 body {
     margin: 0;
+    font-family: "Smythe", serif;
 } 
+
+header {
+    background-image: url('/images/header_bg.png');
+    background-size: cover;
+    padding: 50;
+
+    color: whitesmoke;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item-container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+}
+
+.item-emoji {
+    font-size: 64px;
+}
+
+.order-summary {
+    display: none;
+    flex-direction: column;
+}
+
+.order-summary-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payment-modal {
+    width: 500px;
+    height: 400px;
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    background-color: white;
+    border: 2px solid green;
+}
+
+.card-details-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.thank-you-message {
+    display: none;
+    padding: 10px 20px;
+}

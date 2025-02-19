@@ -1,9 +1,48 @@
 <html>
-    <head>
-       <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-	<script src="index.js"></script>
-    </body>
-</html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Jimmy's Diner</h1>
+      <p>The best burgers and pizzas in town.</p>
+    </header>
 
+    <main>
+      <section id="menu-container">
+        <!--Menu Items go here-->
+      </section>
+
+      <section id="order-summary" class="order-summary">
+        <h2>Your order</h2>
+            <div id="order-summary-items-container">
+            <!--Order Summary Items go here-->
+            </div>
+        <button id="complete-order-btn" class="complete-order-btn">complete order</button>
+      </section>
+
+      <div id="payment-modal" class="payment-modal">
+        <h2>Enter Card Details</h2>
+        <form id="card-details-form" class="card-details-form">
+          <input type="text" name="cardName" placeholder="Enter your name" pattern="[A-Za-z\s]+" required/>
+          <input type="text" name="cardNumber" placeholder="Enter card number" pattern="[0-9]+" required/>
+          <input type="text" name="cardCVV" placeholder="Enter CVV" pattern="[0-9]{3}" required />
+          <button id="pay-btn" type="submit" class="pay-btn">Pay</button>
+        </form>
+      </div>
+      
+      <div id="thank-you-message" class="thank-you-message">
+        <!--Thank you message comes here-->
+      </div>
+    </main>
+
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
